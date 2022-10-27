@@ -45,12 +45,13 @@ htmltools::tagList(
       generator = "xaringan and remark.js"
     ) %>%
     meta_name(
-      "github-repo" = "mattwarkentin/targets-tutorial"
+      "github-repo" = "oncology-outcomes/targets-presentation"
     ) %>%
     meta_social(
       title = "Reproducible and scalable data analysis workflows with targets",
-      url = "https://mattwarkentin.github.io/targets-tutorial",
-      image = "https://raw.githubusercontent.com/mattwarkentin/targets-demo/master/docs/share-card.png?token=AGUJHLOGB4F2SUMMQVT4GWK7WMED2",image_alt = "Title slide for the talk titled Reproducible and scalable data analysis workflows with targets",
+      url = "https://oncology-outcomes.github.io/targets-presentation",
+      image = "https://raw.githubusercontent.com/oncology-outcomes/targets-presentation/main/docs/share-card.png",
+      image_alt = "Title slide for the talk titled Reproducible and scalable data analysis workflows with targets",
       og_type = "website",
       og_author = "Matthew T. Warkentin",
       twitter_card_type = "summary_large_image",
