@@ -1,0 +1,8 @@
+library(targets)
+library(tarchetypes)
+library(htmltools)
+library(reactable)
+library(tidyverse)
+library(glue)
+library(fs)
+library(here)

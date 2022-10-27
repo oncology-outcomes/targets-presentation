@@ -1,0 +1,195 @@
+:root {
+  --sinai-blue: rgb(74, 199, 233);
+  --sinai-red: rgb(255, 35, 60);
+  --sinai-orange: rgb(255, 190, 0);
+  --opaque-box-color: rgba(255, 255, 255, 0.9);
+  --remark-font: "Yanone Kaffeesatz";
+  --title-font-color: white;
+}
+
+/* TITLE SLIDE */
+.title-bg {
+  background-image: url(https://images.unsplash.com/photo-1507823690283-48b0929e727b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+}
+.talk-title {
+  color: var(--title-font-color);
+  margin-bottom: 30px;
+}
+.talk-subtitle {
+  color: var(--title-font-color);
+  font-size: 2rem;
+  margin-bottom: 80px;
+}
+.talk-meta {
+  color: var(--title-font-color);
+  left: 1rem;
+  width: 100%;
+}
+.talk-author {
+  color: var(--title-font-color);
+  font-size: 1.5rem;
+}
+.talk-social {
+  color: var(--title-font-color);
+  font-size: 1.2rem;
+}
+.talk-date {
+  color: var(--title-font-color);
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+.sinai-blue {
+  color: var(--sinai-blue);
+}
+.sinai-red {
+  color: var(--sinai-red);
+}
+.sinai-orange {
+  color: var(--sinai-orange);
+}
+
+/* GENERAL STYLING */
+.highlight-last-item > ul > li,
+.highlight-last-item > ol > li {
+  opacity: 0.4;
+}
+.highlight-last-item > ul > li:last-of-type,
+.highlight-last-item > ol > li:last-of-type {
+  opacity: 1;
+}
+.hide-count .remark-slide-number {
+  display: none;
+}
+.bg-white-o90 {
+  background-color: var(--opaque-box-color);
+}
+.remark-font {
+  font-family: var(--remark-font);
+}
+.targets-pic {
+  position: absolute;
+  width: 250px;
+  right: 200px;
+  bottom: 50px;
+}
+.mover {
+  animation: move-logo 1s ease-in-out 0s 1 forwards;
+}
+@keyframes move-logo {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  100% {
+    transform: translate(-450px, -420px) scale(0.45);
+  }
+}
+.appear {
+  opacity: 0;
+  animation: appear 1s linear 500ms 1 forwards;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.drake-pic {
+  position: absolute;
+  width: 250px;
+  right: 300px;
+  bottom: 50px;
+}
+.drake-meme {
+  width: 625px;
+}
+.fade {
+  opacity: 1;
+  animation: fader 500ms ease-in-out 2s 1 forwards;
+}
+@keyframes fader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.grow {
+  animation: grow 500ms linear 2s 1 forwards;
+}
+@keyframes grow {
+  0% {
+    font-size: inherit;
+  }
+  100% {
+    font-size: 1.5em;
+  }
+}
+.msl {
+  animation: msl 1s ease-in-out 2s 1 forwards;
+  opacity: 0;
+}
+@keyframes msl {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.ksl {
+  animation: ksl 1s ease-in-out 2s 1 forwards;
+  opacity: 1;
+}
+@keyframes ksl {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+.name-tip {
+  left: 190px;
+  top: 20px;
+}
+.command-tip {
+  left: 220px;
+  top: 125px;
+}
+.tip-reveal {
+  animation: tip-reveal 1s ease-in 500ms 1 forwards;
+  opacity: 0;
+}
+@keyframes tip-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.pkg-tip {
+  left: 240px;
+  top: 40px;
+}
+.video-label {
+  bottom: 10px;
+  left: 10px;
+}
+.penguins {
+  top: 20px;
+  left: 400px;
+}
+.bills {
+  top: 200px;
+  right: 85px;
+}
+.allison {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}

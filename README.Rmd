@@ -1,0 +1,20 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Reproducible and scalable data analysis workflows with targets
+
+![](docs/share-card.png)
+
+### Dynamic Function-Oriented Make-Like Declarative Pipelines for R
+
+__Author__: Matthew T. Warkentin (<warkentin@lunenfeld.ca>)
+
+&#x1F4FA; [__Click to View Slides__](https://mattwarkentin.github.io/targets-demo/)
