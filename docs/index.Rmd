@@ -4,7 +4,7 @@ subtitle: "Dynamic Function-Oriented Make-Like Declarative Pipelines for R"
 author: 
   - Matt Warkentin, PhD
 institute: "Cumming School of Medicine, University of Calgary"
-date: 'October 28th, 2022'
+date: 'October 28<sup>th</sup>, 2022'
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -198,7 +198,14 @@ htmltools::img(src = "imgs/targets.png", class = "targets-pic mover")
 
 ### `r fontawesome::fa("bullseye")` What is {targets}?
 
-> .f4[The `targets` package is a Make-like pipeline toolkit for Statistics and data science in R. With `targets`, you can maintain a reproducible workflow without repeating yourself. `targets` learns how your pipeline fits together, skips costly runtime for tasks that are already up to date, runs only the necessary computation, supports implicit parallel computing, abstracts files as R objects, and shows tangible evidence that the results match the underlying code and data.]
+> .f4[As a pipeline toolkit for Statistics and data science in R,
+  the 'targets' package brings together function-oriented programming and
+  'Make'-like declarative workflows.
+  It analyzes the dependency relationships among the tasks of a workflow,
+  skips steps that are already up to date, runs the necessary
+  computation with optional parallel workers, abstracts files as
+  R objects, and provides tangible evidence that the results match
+  the underlying code and data.]
 
 .f4.appear[
 - `{targets}` is a project workflow tool that is very `R`-centric
@@ -224,7 +231,7 @@ htmltools::img(src = "imgs/drake.svg", class = c("drake-pic"))
 
 --
 
-.ml6[`targets` is more...]
+.ml6[`{targets}` is more...]
 .f4.ml6[
 - Efficient
 
@@ -238,7 +245,7 @@ htmltools::img(src = "imgs/drake.svg", class = c("drake-pic"))
 
 - Uses modern best practices
 ]
-.f4.gray.fr[See the [Statement of Need](https://wlandau.github.io/targets/articles/need.html) for details.]
+.f5.gray.fr[See the [What about drake?](https://books.ropensci.org/targets/drake.html) chapter for details.]
 
 ---
 
@@ -255,7 +262,7 @@ class: highlight-last-item
 ### `r fontawesome::fa("far fa-lightbulb")` Why should I use {targets}?
 
 - .f4[.dark-blue[__Organization__]
-  + Explicitly building your projects with as a cohesive pipeline keeps your project more organized and focused]
+  + Explicitly building your projects as a cohesive pipeline keeps your project more organized and focused]
 
 --
 
@@ -297,21 +304,23 @@ class: lh-copy
 
 --
 
-- Your 80/20 functions...
+- Your 90/10 functions...
+
+--
 
   - `tar_target()` - The unit of interest; each target is a building block of your entire pipeline and they represent meaningful components of your project
 
 --
 
-  - `tar_option_set()` - Set global configuration options, such as default storage formats, packages, memory allocation, storage, deployment...etc
+  - `tar_option_set()` - Set project-specific configuration options, such as default storage formats, required packages, memory allocation, storage, deployment...etc
 
 --
 
-  - `tar_visnetwork()` - Visualize your data science project and ensure the topology looks correct; run this early and often
+  - `tar_visnetwork()` - Visualize your pipeline and ensure the topology looks correct; run this early and often while you iterate
 
 --
 
-  - `tar_make()` - Inspects your code/pipeline to understand the dependencies, and builds the pipeline in a separate clean `R` session
+  - `tar_make()` - Inspects your code/pipeline to understand the dependencies, and builds the pipeline in a .green[separate clean R session]
 
 ---
 
@@ -449,7 +458,7 @@ class: middle
 list(...)
 ```
 
-- Simply end your `_targets.R` script with a list containing an arbitrary number of `tar_target()` function calls.
+- Simply end your `_targets.R` script with a list containing an arbitrary set of `tar_target()` function calls.
 
 .o-0[
 Example:
@@ -493,6 +502,32 @@ list(
 
 ---
 
+class: middle
+
+### `r fontawesome::fa("network-wired")` Defining a Pipeline
+
+```r
+list(...)
+```
+
+- Simply end your `_targets.R` script with a list containing an arbitrary number of `tar_target()` function calls.
+
+.b[Example:]
+
+```r
+# _targets.R
+list(
+  tar_target(third, f3(first, second)),
+  tar_target(second, f2()),
+  tar_target(first, f1())
+)
+```
+
+- .b[Note:] The order of targets inside `list()` **does NOT matter**. `{targets}` is smart enough to infer the topology and learn dependency structure
+
+
+---
+
 class: lh-copy
 
 ### `r fontawesome::fa("list-ol")` Imperative scripting
@@ -513,7 +548,9 @@ run_scripts.R
 
 1. You are in charge of saving/loading important objects - humans make mistakes!
 
-1. Everything needs to be ran every time!
+1. Everything needs to be ran every time!*
+
+.f6.absolute.w-40[\* Unless you are manually saving objects to disk, in which case the problem is that each time you run a script it re-saves the object even if nothing has changed. This is tedious and unnecessary.]
 
 ---
 
@@ -571,10 +608,6 @@ find_outcomes(my_data, "C34")
 
 - Everyone has their own preferred way of organizing their files and projects. This is only a suggested way based on my workflow using `{targets}` for building `R`-centric projects
 
-However,
-
-- `_targets.R` must exist at the root of the project
-
 ```
 ├── R/
 │   ├── _packages.R
@@ -585,6 +618,10 @@ However,
 ```
 
 --
+
+However,
+
+- `_targets.R` must exist at the root of the project
 
 - A more mature project may have more subdirectories and files, but this serves as the skeleton for most/all of my `{targets}` projects
   + [Click me...](https://github.com/oncology-outcomes/rproj-template)
@@ -688,7 +725,7 @@ class: middle
 # clean-data.R
 
 clean_data <- function(data) {
-  "<< some R code... >>"
+  # << some R code >>
   return(data_clean)
 } 
 ```
@@ -778,6 +815,8 @@ tar_make()
 ✔ skip pipeline [0.026 seconds]
 ```
 
+--
+
 A look at the data store...
 
 ```
@@ -836,6 +875,8 @@ tar_read(model)
 
 ---
 
+class: middle
+
 ```r
 # _targets.R
 
@@ -857,6 +898,8 @@ list(
 
 ---
 
+class: middle
+
 ```r
 tar_outdated()
 ```
@@ -865,7 +908,9 @@ tar_outdated()
 [1] "summary"
 ```
 
---
+---
+
+class: middle
 
 ```r
 tar_make()
@@ -981,6 +1026,20 @@ class: lh-copy
 - We will set up a more advanced example using dynamic branching
 
 - Let's fit a model for how life expectancy has changed over time for each country in the `gapminder` data set
+
+```{r echo=FALSE}
+gapminder::gapminder
+```
+
+---
+
+class: lh-copy
+
+### `r fontawesome::fa("battery-three-quarters")` Advanced Example: Dynamic Branching
+
+- We will set up a more advanced example using dynamic branching
+
+- Let's fit a model for how life expectancy has changed over time for each country in the `gapminder` data set
   + How many countries are in our data set? Not sure and it doesn't matter
 
 $$\texttt{lifeExpectancy}_i = \beta_0 + \beta_1\texttt{time}_i + \epsilon$$
@@ -1002,14 +1061,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1030,14 +1089,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1058,14 +1117,14 @@ list(
 *   read_tsv(gapminder_file)
 * ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1086,14 +1145,14 @@ list(
     read_tsv(gapminder_file)
   ),
 * tar_target(
-*   country,
+*   gap_by_country,
 *   group_split(gapminder, country), # returns a list of data frames
 *   iteration = "list"
 * ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1114,14 +1173,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
 * tar_target(
 *   model,
-*   lm(lifeExp ~ year, data = country),
-*   pattern = map(country),
+*   lm(lifeExp ~ year, data = gap_by_country),
+*   pattern = map(gap_by_country),
 *   iteration = "list"
 * )
 )
@@ -1149,22 +1208,20 @@ tar_make()
 
 ```
 • start target gapminder_file
-• built target gapminder_file [0.445 seconds]
+• built target gapminder_file [0.44 seconds]
 • start target gapminder
-• built target gapminder [0.105 seconds]
-• start target country
-• built target country [0.009 seconds]
-• start branch model_e7d1cae0
-• built branch model_e7d1cae0 [0.002 seconds]
-• start branch model_f663abe6
-• built branch model_f663abe6 [0 seconds]
-• start branch model_3aebeffd
-• built branch model_3aebeffd [0 seconds]
-• start branch model_f6043924
-• built branch model_f6043924 [0 seconds]
+• built target gapminder [0.103 seconds]
+• start target gap_by_country
+• built target gap_by_country [0.01 seconds]
+• start branch model_ee633b28
+• built branch model_ee633b28 [0.003 seconds]
+• start branch model_ee271fee
+• built branch model_ee271fee [0 seconds]
+• start branch model_2cb08b31
+• built branch model_2cb08b31 [0.001 seconds]
 ...
 • built pattern model
-• end pipeline [1.064 seconds]
+• end pipeline [1.066 seconds]
 ```
 
 ---
@@ -1182,14 +1239,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country),
     iteration = "list"
   ),
   tar_target(
     model,
-*   lm(lifeExp ~ year + gdpPercap, data = country),
-    pattern = map(country),
+*   lm(lifeExp ~ year + gdpPercap, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1200,11 +1257,11 @@ list(
 ### `r fontawesome::fa("battery-three-quarters")` Advanced Example
 
 ```r
-tar_visnetwork(label = c("branches", "time"))
+tar_visnetwork()
 ```
 
 ```{r echo=FALSE}
-img(src = "imgs/gapminder2.png", class = "w-100 center")
+img(src = "imgs/gapminder2.png", class = "w-80 center")
 ```
 
 ---
@@ -1218,7 +1275,7 @@ options(clustermq.scheduler = "multiprocess")
 ```
 
 ```r
-tar_make_clustermq(workers = 6)
+tar_make_clustermq(workers = 6L)
 ```
 
 --
@@ -1226,15 +1283,17 @@ tar_make_clustermq(workers = 6)
 ```
 ✔ skip target gapminder_file
 ✔ skip target gapminder
-✔ skip target country
-• start branch model_e7d1cae0
-• start branch model_f663abe6
-• start branch model_3aebeffd
-• start branch model_f6043924
+✔ skip target gap_by_country
+• start branch model_ee633b28
+• start branch model_ee271fee
+• start branch model_2cb08b31
+• start branch model_9f9154de
+• start branch model_c8d4fac2
+• start branch model_2ff97b9b
 ...
 • built pattern model
-Master: [2.3s 45.6% CPU]; Worker: [avg 49.1% CPU, max 7498263.0 Mb]
-• end pipeline [2.523 seconds]
+Master: [2.3s 46.4% CPU]; Worker: [avg 49.0% CPU, max 7697964.0 Mb]
+• end pipeline [2.485 seconds]
 ```
 
 ---
@@ -1338,6 +1397,35 @@ class: lh-copy
 - `tarchetypes` is a helper package that .i["is a collection of target and pipeline archetypes for the targets package"]
 
 - Lots more, this package does A LOT!
+
+---
+
+.pull-left[
+### `r fontawesome::fa("far fa-circle-question")` Helpful Resources
+
+- [The {targets} R Package User Manual](https://wlandau.github.io/targets-manual/index.html)
+
+- [{targets} Package Website](https://wlandau.github.io/targets/)
+
+- [{targets} GitHub](https://github.com/ropensci/targets)
+
+- [clustermq Website](https://mschubert.github.io/clustermq/)/[GitHub](https://github.com/mschubert/clustermq)
+
+- [`r fontawesome::fa("github")` Presentation repository](https://oncology-outcomes.github.io/targets-presentation)
+]
+
+.pull-right[
+### `r fontawesome::fa("far fa-thumbs-up")` Acknolwedgements
+
+- .b[Will Landau]
+  + Author of `targets` and `drake`
+
+- .b[Michael Schubert]
+  + Author of `clustermq`
+]
+<br><br>
+.ba.pa3.br3.bg-yellow.f4.center.shadow-5[.b.f3[Kohn's Second Law:] An experiment is reproducible until another laboratory tries to repeat it]
+<br>
 
 ---
 

@@ -93,7 +93,7 @@ Cumming School of Medicine, University of Calgary
 <div class="talk-date">
 <span>
 <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FFFFFF;overflow:visible;position:relative;"><path d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM80 256C71.16 256 64 263.2 64 272V368C64 376.8 71.16 384 80 384H176C184.8 384 192 376.8 192 368V272C192 263.2 184.8 256 176 256H80z"/></svg>
-October 28th, 2022
+October 28&lt;sup&gt;th&lt;/sup&gt;, 2022
 </span>
 </div>
 </div>
@@ -215,7 +215,14 @@ class: lh-copy
 
 ### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224C273.7 224 288 238.3 288 256zM112 256C112 176.5 176.5 112 256 112C335.5 112 400 176.5 400 256C400 335.5 335.5 400 256 400C176.5 400 112 335.5 112 256zM256 336C300.2 336 336 300.2 336 256C336 211.8 300.2 176 256 176C211.8 176 176 211.8 176 256C176 300.2 211.8 336 256 336zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64C149.1 64 64 149.1 64 256C64 362 149.1 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/></svg> What is {targets}?
 
-&gt; .f4[The `targets` package is a Make-like pipeline toolkit for Statistics and data science in R. With `targets`, you can maintain a reproducible workflow without repeating yourself. `targets` learns how your pipeline fits together, skips costly runtime for tasks that are already up to date, runs only the necessary computation, supports implicit parallel computing, abstracts files as R objects, and shows tangible evidence that the results match the underlying code and data.]
+&gt; .f4[As a pipeline toolkit for Statistics and data science in R,
+  the 'targets' package brings together function-oriented programming and
+  'Make'-like declarative workflows.
+  It analyzes the dependency relationships among the tasks of a workflow,
+  skips steps that are already up to date, runs the necessary
+  computation with optional parallel workers, abstracts files as
+  R objects, and provides tangible evidence that the results match
+  the underlying code and data.]
 
 .f4.appear[
 - `{targets}` is a project workflow tool that is very `R`-centric
@@ -239,7 +246,7 @@ class: lh-copy
 
 --
 
-.ml6[`targets` is more...]
+.ml6[`{targets}` is more...]
 .f4.ml6[
 - Efficient
 
@@ -253,7 +260,7 @@ class: lh-copy
 
 - Uses modern best practices
 ]
-.f4.gray.fr[See the [Statement of Need](https://wlandau.github.io/targets/articles/need.html) for details.]
+.f5.gray.fr[See the [What about drake?](https://books.ropensci.org/targets/drake.html) chapter for details.]
 
 ---
 
@@ -268,7 +275,7 @@ class: highlight-last-item
 ### <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"/></svg> Why should I use {targets}?
 
 - .f4[.dark-blue[__Organization__]
-  + Explicitly building your projects with as a cohesive pipeline keeps your project more organized and focused]
+  + Explicitly building your projects as a cohesive pipeline keeps your project more organized and focused]
 
 --
 
@@ -308,21 +315,23 @@ class: lh-copy
 
 --
 
-- Your 80/20 functions...
+- Your 90/10 functions...
+
+--
 
   - `tar_target()` - The unit of interest; each target is a building block of your entire pipeline and they represent meaningful components of your project
 
 --
 
-  - `tar_option_set()` - Set global configuration options, such as default storage formats, packages, memory allocation, storage, deployment...etc
+  - `tar_option_set()` - Set project-specific configuration options, such as default storage formats, required packages, memory allocation, storage, deployment...etc
 
 --
 
-  - `tar_visnetwork()` - Visualize your data science project and ensure the topology looks correct; run this early and often
+  - `tar_visnetwork()` - Visualize your pipeline and ensure the topology looks correct; run this early and often while you iterate
 
 --
 
-  - `tar_make()` - Inspects your code/pipeline to understand the dependencies, and builds the pipeline in a separate clean `R` session
+  - `tar_make()` - Inspects your code/pipeline to understand the dependencies, and builds the pipeline in a .green[separate clean R session]
 
 ---
 
@@ -454,7 +463,7 @@ class: middle
 list(...)
 ```
 
-- Simply end your `_targets.R` script with a list containing an arbitrary number of `tar_target()` function calls.
+- Simply end your `_targets.R` script with a list containing an arbitrary set of `tar_target()` function calls.
 
 .o-0[
 Example:
@@ -498,6 +507,32 @@ list(
 
 ---
 
+class: middle
+
+### <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M400 0C426.5 0 448 21.49 448 48V144C448 170.5 426.5 192 400 192H352V224H608C625.7 224 640 238.3 640 256C640 273.7 625.7 288 608 288H512V320H560C586.5 320 608 341.5 608 368V464C608 490.5 586.5 512 560 512H400C373.5 512 352 490.5 352 464V368C352 341.5 373.5 320 400 320H448V288H192V320H240C266.5 320 288 341.5 288 368V464C288 490.5 266.5 512 240 512H80C53.49 512 32 490.5 32 464V368C32 341.5 53.49 320 80 320H128V288H32C14.33 288 0 273.7 0 256C0 238.3 14.33 224 32 224H288V192H240C213.5 192 192 170.5 192 144V48C192 21.49 213.5 0 240 0H400zM256 64V128H384V64H256zM224 448V384H96V448H224zM416 384V448H544V384H416z"/></svg> Defining a Pipeline
+
+```r
+list(...)
+```
+
+- Simply end your `_targets.R` script with a list containing an arbitrary number of `tar_target()` function calls.
+
+.b[Example:]
+
+```r
+# _targets.R
+list(
+  tar_target(third, f3(first, second)),
+  tar_target(second, f2()),
+  tar_target(first, f1())
+)
+```
+
+- .b[Note:] The order of targets inside `list()` **does NOT matter**. `{targets}` is smart enough to infer the topology and learn dependency structure
+
+
+---
+
 class: lh-copy
 
 ### <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M55.1 56.04C55.1 42.78 66.74 32.04 79.1 32.04H111.1C125.3 32.04 135.1 42.78 135.1 56.04V176H151.1C165.3 176 175.1 186.8 175.1 200C175.1 213.3 165.3 224 151.1 224H71.1C58.74 224 47.1 213.3 47.1 200C47.1 186.8 58.74 176 71.1 176H87.1V80.04H79.1C66.74 80.04 55.1 69.29 55.1 56.04V56.04zM118.7 341.2C112.1 333.8 100.4 334.3 94.65 342.4L83.53 357.9C75.83 368.7 60.84 371.2 50.05 363.5C39.26 355.8 36.77 340.8 44.47 330.1L55.59 314.5C79.33 281.2 127.9 278.8 154.8 309.6C176.1 333.1 175.6 370.5 153.7 394.3L118.8 432H152C165.3 432 176 442.7 176 456C176 469.3 165.3 480 152 480H64C54.47 480 45.84 474.4 42.02 465.6C38.19 456.9 39.9 446.7 46.36 439.7L118.4 361.7C123.7 355.9 123.8 347.1 118.7 341.2L118.7 341.2zM512 64C529.7 64 544 78.33 544 96C544 113.7 529.7 128 512 128H256C238.3 128 224 113.7 224 96C224 78.33 238.3 64 256 64H512zM512 224C529.7 224 544 238.3 544 256C544 273.7 529.7 288 512 288H256C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224H512zM512 384C529.7 384 544 398.3 544 416C544 433.7 529.7 448 512 448H256C238.3 448 224 433.7 224 416C224 398.3 238.3 384 256 384H512z"/></svg> Imperative scripting
@@ -518,7 +553,9 @@ run_scripts.R
 
 1. You are in charge of saving/loading important objects - humans make mistakes!
 
-1. Everything needs to be ran every time!
+1. Everything needs to be ran every time!*
+
+.f6.absolute.w-40[\* Unless you are manually saving objects to disk, in which case the problem is that each time you run a script it re-saves the object even if nothing has changed. This is tedious and unnecessary.]
 
 ---
 
@@ -576,10 +613,6 @@ find_outcomes(my_data, "C34")
 
 - Everyone has their own preferred way of organizing their files and projects. This is only a suggested way based on my workflow using `{targets}` for building `R`-centric projects
 
-However,
-
-- `_targets.R` must exist at the root of the project
-
 ```
 ├── R/
 │   ├── _packages.R
@@ -590,6 +623,10 @@ However,
 ```
 
 --
+
+However,
+
+- `_targets.R` must exist at the root of the project
 
 - A more mature project may have more subdirectories and files, but this serves as the skeleton for most/all of my `{targets}` projects
   + [Click me...](https://github.com/oncology-outcomes/rproj-template)
@@ -693,7 +730,7 @@ class: middle
 # clean-data.R
 
 clean_data &lt;- function(data) {
-  "&lt;&lt; some R code... &gt;&gt;"
+  # &lt;&lt; some R code &gt;&gt;
   return(data_clean)
 } 
 ```
@@ -781,6 +818,8 @@ tar_make()
 ✔ skip pipeline [0.026 seconds]
 ```
 
+--
+
 A look at the data store...
 
 ```
@@ -839,6 +878,8 @@ tar_read(model)
 
 ---
 
+class: middle
+
 ```r
 # _targets.R
 
@@ -860,6 +901,8 @@ list(
 
 ---
 
+class: middle
+
 ```r
 tar_outdated()
 ```
@@ -868,7 +911,9 @@ tar_outdated()
 [1] "summary"
 ```
 
---
+---
+
+class: middle
 
 ```r
 tar_make()
@@ -984,6 +1029,34 @@ class: lh-copy
 - We will set up a more advanced example using dynamic branching
 
 - Let's fit a model for how life expectancy has changed over time for each country in the `gapminder` data set
+
+
+```
+## # A tibble: 1,704 × 6
+##    country     continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333      779.
+##  2 Afghanistan Asia       1957    30.3  9240934      821.
+##  3 Afghanistan Asia       1962    32.0 10267083      853.
+##  4 Afghanistan Asia       1967    34.0 11537966      836.
+##  5 Afghanistan Asia       1972    36.1 13079460      740.
+##  6 Afghanistan Asia       1977    38.4 14880372      786.
+##  7 Afghanistan Asia       1982    39.9 12881816      978.
+##  8 Afghanistan Asia       1987    40.8 13867957      852.
+##  9 Afghanistan Asia       1992    41.7 16317921      649.
+## 10 Afghanistan Asia       1997    41.8 22227415      635.
+## # … with 1,694 more rows
+```
+
+---
+
+class: lh-copy
+
+### <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 320H96V192H352V320zM0 176C0 131.8 35.82 96 80 96H464C508.2 96 544 131.8 544 176V192C561.7 192 576 206.3 576 224V288C576 305.7 561.7 320 544 320V336C544 380.2 508.2 416 464 416H80C35.82 416 0 380.2 0 336V176zM80 160C71.16 160 64 167.2 64 176V336C64 344.8 71.16 352 80 352H464C472.8 352 480 344.8 480 336V176C480 167.2 472.8 160 464 160H80z"/></svg> Advanced Example: Dynamic Branching
+
+- We will set up a more advanced example using dynamic branching
+
+- Let's fit a model for how life expectancy has changed over time for each country in the `gapminder` data set
   + How many countries are in our data set? Not sure and it doesn't matter
 
 `$$\texttt{lifeExpectancy}_i = \beta_0 + \beta_1\texttt{time}_i + \epsilon$$`
@@ -1005,14 +1078,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1033,14 +1106,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1061,14 +1134,14 @@ list(
 *   read_tsv(gapminder_file)
 * ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1089,14 +1162,14 @@ list(
     read_tsv(gapminder_file)
   ),
 * tar_target(
-*   country,
+*   gap_by_country,
 *   group_split(gapminder, country), # returns a list of data frames
 *   iteration = "list"
 * ),
   tar_target(
     model,
-    lm(lifeExp ~ year, data = country),
-    pattern = map(country),
+    lm(lifeExp ~ year, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1117,14 +1190,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country), # returns a list of data frames
     iteration = "list"
   ),
 * tar_target(
 *   model,
-*   lm(lifeExp ~ year, data = country),
-*   pattern = map(country),
+*   lm(lifeExp ~ year, data = gap_by_country),
+*   pattern = map(gap_by_country),
 *   iteration = "list"
 * )
 )
@@ -1150,22 +1223,20 @@ tar_make()
 
 ```
 • start target gapminder_file
-• built target gapminder_file [0.445 seconds]
+• built target gapminder_file [0.44 seconds]
 • start target gapminder
-• built target gapminder [0.105 seconds]
-• start target country
-• built target country [0.009 seconds]
-• start branch model_e7d1cae0
-• built branch model_e7d1cae0 [0.002 seconds]
-• start branch model_f663abe6
-• built branch model_f663abe6 [0 seconds]
-• start branch model_3aebeffd
-• built branch model_3aebeffd [0 seconds]
-• start branch model_f6043924
-• built branch model_f6043924 [0 seconds]
+• built target gapminder [0.103 seconds]
+• start target gap_by_country
+• built target gap_by_country [0.01 seconds]
+• start branch model_ee633b28
+• built branch model_ee633b28 [0.003 seconds]
+• start branch model_ee271fee
+• built branch model_ee271fee [0 seconds]
+• start branch model_2cb08b31
+• built branch model_2cb08b31 [0.001 seconds]
 ...
 • built pattern model
-• end pipeline [1.064 seconds]
+• end pipeline [1.066 seconds]
 ```
 
 ---
@@ -1183,14 +1254,14 @@ list(
     read_tsv(gapminder_file)
   ),
   tar_target(
-    country,
+    gap_by_country,
     group_split(gapminder, country),
     iteration = "list"
   ),
   tar_target(
     model,
-*   lm(lifeExp ~ year + gdpPercap, data = country),
-    pattern = map(country),
+*   lm(lifeExp ~ year + gdpPercap, data = gap_by_country),
+    pattern = map(gap_by_country),
     iteration = "list"
   )
 )
@@ -1201,10 +1272,10 @@ list(
 ### <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 320H96V192H352V320zM0 176C0 131.8 35.82 96 80 96H464C508.2 96 544 131.8 544 176V192C561.7 192 576 206.3 576 224V288C576 305.7 561.7 320 544 320V336C544 380.2 508.2 416 464 416H80C35.82 416 0 380.2 0 336V176zM80 160C71.16 160 64 167.2 64 176V336C64 344.8 71.16 352 80 352H464C472.8 352 480 344.8 480 336V176C480 167.2 472.8 160 464 160H80z"/></svg> Advanced Example
 
 ```r
-tar_visnetwork(label = c("branches", "time"))
+tar_visnetwork()
 ```
 
-<img src="imgs/gapminder2.png" class="w-100 center"/>
+<img src="imgs/gapminder2.png" class="w-80 center"/>
 
 ---
 
@@ -1217,7 +1288,7 @@ options(clustermq.scheduler = "multiprocess")
 ```
 
 ```r
-tar_make_clustermq(workers = 6)
+tar_make_clustermq(workers = 6L)
 ```
 
 --
@@ -1225,15 +1296,17 @@ tar_make_clustermq(workers = 6)
 ```
 ✔ skip target gapminder_file
 ✔ skip target gapminder
-✔ skip target country
-• start branch model_e7d1cae0
-• start branch model_f663abe6
-• start branch model_3aebeffd
-• start branch model_f6043924
+✔ skip target gap_by_country
+• start branch model_ee633b28
+• start branch model_ee271fee
+• start branch model_2cb08b31
+• start branch model_9f9154de
+• start branch model_c8d4fac2
+• start branch model_2ff97b9b
 ...
 • built pattern model
-Master: [2.3s 45.6% CPU]; Worker: [avg 49.1% CPU, max 7498263.0 Mb]
-• end pipeline [2.523 seconds]
+Master: [2.3s 46.4% CPU]; Worker: [avg 49.0% CPU, max 7697964.0 Mb]
+• end pipeline [2.485 seconds]
 ```
 
 ---
@@ -1337,6 +1410,35 @@ class: lh-copy
 - `tarchetypes` is a helper package that .i["is a collection of target and pipeline archetypes for the targets package"]
 
 - Lots more, this package does A LOT!
+
+---
+
+.pull-left[
+### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464zM256 336c-18 0-32 14-32 32s13.1 32 32 32c17.1 0 32-14 32-32S273.1 336 256 336zM289.1 128h-51.1C199 128 168 159 168 198c0 13 11 24 24 24s24-11 24-24C216 186 225.1 176 237.1 176h51.1C301.1 176 312 186 312 198c0 8-4 14.1-11 18.1L244 251C236 256 232 264 232 272V288c0 13 11 24 24 24S280 301 280 288V286l45.1-28c21-13 34-36 34-60C360 159 329 128 289.1 128z"/></svg> Helpful Resources
+
+- [The {targets} R Package User Manual](https://wlandau.github.io/targets-manual/index.html)
+
+- [{targets} Package Website](https://wlandau.github.io/targets/)
+
+- [{targets} GitHub](https://github.com/ropensci/targets)
+
+- [clustermq Website](https://mschubert.github.io/clustermq/)/[GitHub](https://github.com/mschubert/clustermq)
+
+- [<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> Presentation repository](https://oncology-outcomes.github.io/targets-presentation)
+]
+
+.pull-right[
+### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 191.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V223.1C128 206.3 113.7 191.1 96 191.1zM512 227c0-36.89-30.05-66.92-66.97-66.92h-99.86C354.7 135.1 360 113.5 360 100.8c0-33.8-26.2-68.78-70.06-68.78c-46.61 0-59.36 32.44-69.61 58.5c-31.66 80.5-60.33 66.39-60.33 93.47c0 12.84 10.36 23.99 24.02 23.99c5.256 0 10.55-1.721 14.97-5.26c76.76-61.37 57.97-122.7 90.95-122.7c16.08 0 22.06 12.75 22.06 20.79c0 7.404-7.594 39.55-25.55 71.59c-2.046 3.646-3.066 7.686-3.066 11.72c0 13.92 11.43 23.1 24 23.1h137.6C455.5 208.1 464 216.6 464 227c0 9.809-7.766 18.03-17.67 18.71c-12.66 .8593-22.36 11.4-22.36 23.94c0 15.47 11.39 15.95 11.39 28.91c0 25.37-35.03 12.34-35.03 42.15c0 11.22 6.392 13.03 6.392 22.25c0 22.66-29.77 13.76-29.77 40.64c0 4.515 1.11 5.961 1.11 9.456c0 10.45-8.516 18.95-18.97 18.95h-52.53c-25.62 0-51.02-8.466-71.5-23.81l-36.66-27.51c-4.315-3.245-9.37-4.811-14.38-4.811c-13.85 0-24.03 11.38-24.03 24.04c0 7.287 3.312 14.42 9.596 19.13l36.67 27.52C235 468.1 270.6 480 306.6 480h52.53c35.33 0 64.36-27.49 66.8-62.2c17.77-12.23 28.83-32.51 28.83-54.83c0-3.046-.2187-6.107-.6406-9.122c17.84-12.15 29.28-32.58 29.28-55.28c0-5.311-.6406-10.54-1.875-15.64C499.9 270.1 512 250.2 512 227z"/></svg> Acknolwedgements
+
+- .b[Will Landau]
+  + Author of `targets` and `drake`
+
+- .b[Michael Schubert]
+  + Author of `clustermq`
+]
+&lt;br&gt;&lt;br&gt;
+.ba.pa3.br3.bg-yellow.f4.center.shadow-5[.b.f3[Kohn's Second Law:] An experiment is reproducible until another laboratory tries to repeat it]
+&lt;br&gt;
 
 ---
 
