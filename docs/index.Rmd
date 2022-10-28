@@ -1432,15 +1432,15 @@ class: lh-copy
 .pull-left[
 ### `r fontawesome::fa("far fa-circle-question")` Helpful Resources
 
-- [The targets R Package User Manual](https://wlandau.github.io/targets-manual/index.html)
+- [The {targets} R Package User Manual](https://wlandau.github.io/targets-manual/index.html)
 
-- [targets Website](https://wlandau.github.io/targets/)
+- [{targets} Package Website](https://wlandau.github.io/targets/)
 
-- [targets GitHub](https://github.com/ropensci/targets)
+- [{targets} GitHub](https://github.com/ropensci/targets)
 
 - [clustermq Website](https://mschubert.github.io/clustermq/)/[GitHub](https://github.com/mschubert/clustermq)
 
-- [`r fontawesome::fa("github")` Presentation repository](https://github.com/mattwarkentin/targets-demo)
+- [`r fontawesome::fa("github")` Presentation repository](https://oncology-outcomes.github.io/targets-presentation)
 ]
 
 .pull-right[
